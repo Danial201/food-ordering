@@ -166,6 +166,7 @@ document.getElementById('export').addEventListener('click', function(event) {
   const cityInput = document.querySelector('input[name="city"]').value;
   const postcodeInput = document.querySelector('input[name="postcode"]').value;
   const phoneNumberInput = document.querySelector('input[name="phonenumber"]').value;
+  
 
   if (!nameInput || !flatNumberInput || !cityInput || !postcodeInput || !phoneNumberInput) {
     alert("Please fill out the delivery address form before exporting PDF.");

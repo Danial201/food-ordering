@@ -44,6 +44,17 @@ h1 {
   text-align: center;
 }
 
+.p {
+    margin: 0;
+    padding: 21px;
+    background: #eb4d4b;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 39px;
+    text-align: center;
+  
+}
+
 h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 37px;

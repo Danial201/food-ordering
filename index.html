@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <h1><i class="fa fa-cutlery" aria-hidden="true"></i> Food Ordering App</h1>
+    <h1><i class="fa fa-cutlery" aria-hidden="true"></i> MEALZ Catering </h1><p class="p">Order for tomorrow</p>
   </header>
   <form method="POST" action="https://formsubmit.co/danialsohail733@gmail.com">
     <main>
@@ -24,19 +24,31 @@
           <h2>Menu</h2>    
         </section>
       </div>
-      <section id="address-form">
-        <h2>Delivery Address</h2>
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br><br>
-        <label for="flat_number">Flat Number:</label>
-        <input type="text" name="flat_number" required><br><br>
-        <label for="city">City:</label>
-        <input type="text" name="city" required><br><br>
-        <label for="postcode">Postcode:</label>
-        <input type="text" name="postcode" required><br><br>
-        <label for="phonenumber">Phone number:</label>
-        <input type="tel" name="phonenumber" required><br><br>
-      </section>
+      <!-- ... (previous HTML code) ... -->
+<section id="address-form">
+  <h2>Delivery Address</h2>
+  <label for="name">Name:</label>
+  <input type="text" name="name" required><br><br>
+  <label for="flat_number">Flat Number:</label>
+  <input type="text" name="flat_number" required><br><br>
+  <label for="city">City:</label>
+  <input type="text" name="city" required><br><br>
+
+  <label for="street_name">Street Name:</label>
+  <input type="text" name="street_name"><br><br> <!-- New input field -->
+
+  <label for="postcode">Postcode:</label>
+  <input type="text" name="postcode" required><br><br>
+  <label for="phonenumber">Phone number:</label>
+  <input type="tel" name="phonenumber" required><br><br>
+
+  <label for="delivery_date">Delivery Date:</label>
+  <input type="date" name="delivery_date" required placeholder="YYYY-MM-DD"><br><br>
+  <label for="delivery_time">Delivery Time:</label>
+  <input type="time" name="delivery_time" required placeholder="HH:MM AM/PM"><br><br>
+</section>
+<!-- ... (rest of the HTML code) ... -->
+
     </main>
   </form>
   <script src="./script.js"></script>
