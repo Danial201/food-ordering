@@ -155,6 +155,11 @@ initApp();
 // ... (previous code)
 
 function exportPDF() {
+  
+  // Add an event listener to the export button
+document.getElementById('export').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
   // Check if the delivery address form is filled out
   const nameInput = document.querySelector('input[name="name"]').value;
   const flatNumberInput = document.querySelector('input[name="flat_number"]').value;
@@ -167,6 +172,7 @@ function exportPDF() {
     return;
   }
 
+  // If the form is filled, generate and attach the order summary
   let orderSummary = ""; // Initialize order summary text
   orderSummary += "Delivery Address:\n";
   orderSummary += `Name: ${nameInput}\n`;
@@ -190,7 +196,8 @@ function exportPDF() {
 
   // Submit the form
   document.querySelector("form").submit();
-}
+});}
+
 
 // ... (rest of the code)
 
