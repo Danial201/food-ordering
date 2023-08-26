@@ -152,14 +152,28 @@ function initApp() {
 
 initApp();
 
+// ... (previous code)
+
 function exportPDF() {
+  // Check if the delivery address form is filled out
+  const nameInput = document.querySelector('input[name="name"]').value;
+  const flatNumberInput = document.querySelector('input[name="flat_number"]').value;
+  const cityInput = document.querySelector('input[name="city"]').value;
+  const postcodeInput = document.querySelector('input[name="postcode"]').value;
+  const phoneNumberInput = document.querySelector('input[name="phonenumber"]').value;
+
+  if (!nameInput || !flatNumberInput || !cityInput || !postcodeInput || !phoneNumberInput) {
+    alert("Please fill out the delivery address form before exporting PDF.");
+    return;
+  }
+
   let orderSummary = ""; // Initialize order summary text
   orderSummary += "Delivery Address:\n";
-  orderSummary += `Name: ${document.querySelector('input[name="name"]').value}\n`;
-  orderSummary += `Flat Number: ${document.querySelector('input[name="flat_number"]').value}\n`;
-  orderSummary += `City: ${document.querySelector('input[name="city"]').value}\n`;
-  orderSummary += `Postcode: ${document.querySelector('input[name="postcode"]').value}\n`;
-  orderSummary += `Phone Number: ${document.querySelector('input[name="phonenumber"]').value}\n\n`;
+  orderSummary += `Name: ${nameInput}\n`;
+  orderSummary += `Flat Number: ${flatNumberInput}\n`;
+  orderSummary += `City: ${cityInput}\n`;
+  orderSummary += `Postcode: ${postcodeInput}\n`;
+  orderSummary += `Phone Number: ${phoneNumberInput}\n\n`;
 
   orderSummary += "Order Items:\n";
   order_list.forEach((item, index) => {
@@ -177,3 +191,6 @@ function exportPDF() {
   // Submit the form
   document.querySelector("form").submit();
 }
+
+// ... (rest of the code)
+

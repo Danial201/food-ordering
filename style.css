@@ -19,28 +19,20 @@
   background: #aaa;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: coral;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background: coral;
-    height: 1700px;
-    align-items: center;
-  }
-
-  main {
-    align-items: center;
-    left: 50%;
-  }
-}
 h1 {
   margin: 0;
   padding: 21px;
@@ -61,29 +53,43 @@ h2 {
 }
 
 main {
-  margin: 21px auto 0 auto;
+  margin: 21px auto;
   max-width: 1024px;
-  height: 1800px;
   text-align: center;
+}
+
+.sections-container {
+  display: flex;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 42px;
+  margin-top: 42px;
 }
 
 section {
-  margin: 21px;
-  padding: 0 21px 10px 21px;
-  width: 400px;
-  background: rgba(255,255,255,.7);
+  flex: 1;
+  background: rgba(255, 255, 255, 0.7);
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow-y: auto;
-  align-items: center;
+  padding: 0 21px 10px 21px;
 }
 
 #address-form {
-  margin-bottom: 00px;
+  margin-top: 42px;
   padding-bottom: 100px;
 }
 
+@media only screen and (max-width: 600px) {
+  .sections-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+  }
+}
+
+/* Rest of your CSS remains unchanged */
 @media only screen and (max-width: 600px) {
 
 }
