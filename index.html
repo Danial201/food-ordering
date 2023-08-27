@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Ordering App</title>
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Open+Sans:300,400,600,700&display=swap&subset=vietnamese" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1><i class="fa fa-cutlery" aria-hidden="true"></i> MEALZ Catering </h1><p class="p">Order for tomorrow</p>
-  </header>
-  <form method="POST" action="https://formsubmit.co/danialsohail733@gmail.com">
-    <main>
-      <div class="sections-container">
-        <section id="order-list">
-          <h2>Order(s)</h2>
-          <table id="order-tbl">
-          </table>
-        </section>
-        <section id="menu">
-          <h2>Menu</h2>    
-        </section>
-      </div>
+    <header class="navbar">
+        <h1>Mealz Catering</h1>
+        <p>Order For Tomorrow</p>
+    </header>
+    <div class="scrollable-content">
+        <form id="order-form" action="https://formsubmit.co/danialsohail733@gmail.com" method="POST" onsubmit="return validateForm();">
+            <section class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScywzPWcx8vSQd5D7Nq91GSlmDzBxmQdX74A&usqp=CAU" alt="Masala Fish With Rice">
+                <h2>Masala Fish With Rice</h2>
+                <p>Price: 42 zl</p>
+                <input type="number" name="masala_fish" id="fish" value="0">
 
-      
-      <!-- ... (previous HTML code) ... -->
-<section id="address-form">
-  <h2>Delivery Address</h2>
-  <label for="name">Name:</label>
-  <input type="text" name="name" required><br><br>
-  <label for="flat_number">Flat Number:</label>
-  <input type="text" name="flat_number" required><br><br>
-  <label for="city">City:</label>
-  <input type="text" name="city" required><br><br>
+<br><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScywzPWcx8vSQd5D7Nq91GSlmDzBxmQdX74A&usqp=CAU" alt="Masala Fish With Rice">
+                <h2>Masala Fish With naan</h2>
+                <p>Price: 42 zl</p>
+                <input type="number" name="masala_fish" id="fish" value="0">
 
-  <label for="street_name">Street Name:</label>
-  <input type="text" name="street_name"><br><br> <!-- New input field -->
+                <img src="https://shireenanwer.com/wp-content/uploads/2020/10/Untitled-design-1-1.png" alt="Masala Fish With Rice">
+                <h2>Firni</h2>
+                <p>Price: 15 zl</p>
+                <input type="number" name="masala_fish" id="fish" value="0">
+            </section>
+            <!-- Add more food items here... -->
 
-  <label for="postcode">Postcode:</label>
-  <input type="text" name="postcode" required><br><br>
-  <label for="phonenumber">Phone number:</label>
-  <input type="tel" name="phonenumber" required><br><br>
+            <section class="address">
+                <h1>Delivery Address</h1>
+                <label for="Name">Name:</label>
+                <input type="text" name="Name"><br>
+    
+                <label for="City">City:</label>
+                <input type="text" name="City"><br>
+    
+                <label for="Street">Street Name:</label>
+                <input type="text" name="Street"><br>
 
-  <label for="delivery_date">Delivery Date:</label>
-  <input type="date" name="delivery_date" required placeholder="YYYY-MM-DD"><br><br>
-  <label for="delivery_time">Delivery Time:</label>
-  <input type="time" name="delivery_time" required placeholder="HH:MM AM/PM"><br><br>
-</section>
-<!-- ... (rest of the HTML code) ... -->
+                <label for="Street">Flat Number</label>
+                <input type="number" name="Street"><br>
+    
+                <label for="Postcode">Postcode:</label>
+                <input type="text" name="Postcode"><br>
+    
+                <label for="Phone">Phone Number:</label>
+                <input type="text" name="Phone"><br>
+    
+                <label for="delivery_date">Delivery Date:</label>
+                <input type="date" name="delivery_date" required placeholder="YYYY-MM-DD"><br>
+    
+                <label for="delivery_time">Delivery Time:</label>
+                <input type="time" name="delivery_time" required placeholder="HH:MM AM/PM"><br>
+            </section>
+            <input type="submit" value="SUBMIT ORDER">
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+<br><br><br>
+    <script>
+        function validateForm() {
+            var name = document.forms["order-form"]["Name"].value;
+            var city = document.forms["order-form"]["City"].value;
+            var street = document.forms["order-form"]["Street"].value;
+            var flatNumber = document.forms["order-form"]["FlatNumber"].value;
+            var postcode = document.forms["order-form"]["Postcode"].value;
+            var phone = document.forms["order-form"]["Phone"].value;
+        
+            if (name === "" || city === "" || street === "" || flatNumber === "" || postcode === "" || phone === "") {
+                alert("Please fill out all address fields before submitting.");
+                return false;
+            }
+        }
+        </script>
 
-    </main>
-  </form>
-  <script src="./script.js"></script>
 </body>
 </html>

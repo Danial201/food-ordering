@@ -1,204 +1,96 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-*::-webkit-scrollbar {
-  width: 5px;
-}
-
-*::-webkit-scrollbar-track {
-  background: rgba(0,0,0,.1);
-}
-
-*::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 9em;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  background-color: coral;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  text-align: center;
-}
-
-h1 {
-  margin: 0;
-  padding: 21px;
-  background: #eb4d4b;
-  color: #fff;
-  font-family: 'Dancing Script', cursive;
-  font-size: 59px;
-  line-height: 63px;
-  text-align: center;
-}
-
-.p {
     margin: 0;
-    padding: 21px;
-    background: #eb4d4b;
-    color: #fff;
-    font-family: 'Dancing Script', cursive;
-    font-size: 39px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.scrollable-content {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+.navbar {
     text-align: center;
-  
+    padding: 20px;
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 37px;
-  line-height: 42px;
-  margin-top: 21px;
-  margin-bottom: 21px;
+.food-item {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-main {
-  margin: 21px auto;
-  max-width: 1024px;
-  text-align: center;
+.food-item img {
+    max-width: 100%;
+    margin-bottom: 10px;
 }
 
-.sections-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 42px;
-  margin-top: 42px;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow-y: auto;
-  padding: 0 21px 10px 21px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
-#address-form {
-  margin-top: 42px;
-  padding-bottom: 100px;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-@media only screen and (max-width: 600px) {
-  .sections-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 21px;
-  }
+input[type="number"],
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-/* Rest of your CSS remains unchanged */
-@media only screen and (max-width: 600px) {
-
+input[type="submit"] {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#order-list {
-  display: flex;
-  flex-direction: column;
-  margin-right: 0;
+input[type="submit"]:hover {
+    background-color: #c0392b;
 }
 
-table {
-  margin-bottom: 21px;
-  width: 100%;
-  border: none;
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    width: 0.5em;
 }
 
-table, th, td {
-  border-collapse: collapse;
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
 }
-
-tr:not(:first-child):not(:last-child) {
-  border-bottom: 1px solid #ddd;
-}
-
-th, td {
-  padding: 4px 6px;
-  text-align: left;
-}
-
-th {
-  background: #ffbe76;
-  color: #fff;
-}
-
-.menu-item {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.menu-item h4, .menu-item p {
-  margin: 8px;
-}
-
-.menu-item .price {
-  margin-left: auto;
-}
-
-.qty {
-  margin-right: 8px;
-  padding: 2px 4px;
-  width: 40px;
-}
-
-.add-btn {
-  padding: 6px 10px;
-  background: #6ab04c;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.del-btn {
-  display: block;
-  text-align: center;
-}
-
-.del-btn:hover { opacity: .75 }
-
-.del-btn .fa {
-  color: #eb4d4b; 
-}
-
-#export {
-  margin-top: auto;
-  padding: 3px 5px;
-  background: #eee;
-  border: 1px solid #ddd;
-  align-self: flex-end;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.menu-image {
-  width: 100px; /* Set the initial width of the image */
-  height: auto; /* Maintain the aspect ratio */
-  margin-right: 10px; /* Add some spacing between image and text */
-}
-
-.menu-image img {
-  width: 100%; /* Make the image fill its container */
-  height: 100%; /* Maintain the aspect ratio */
-  object-fit: cover; /* Crop the image to fit */
-  border-radius: 8px; /* Optionally add border radius */
-}
-
