@@ -2,59 +2,17 @@
 const menu_container = document.getElementById('menu');
 const order_tbl = document.getElementById('order-tbl');
 const menu = [
+  // ... (previous menu items)
+
   {
-    name: "Rice with fried fish",
-    price: 25
+    name: "Masala Fish with Rice",
+    price: 42
   },
   {
-    name: "Rice with chicken",
-    price: 25
-  },
-  {
-    name: "Rice with grill rib",
-    price: 25
-  },
-  {
-    name: "Rice with Dieu Hong fish",
-    price: 20
-  },
-  {
-    name: "Rice with cat fish",
-    price: 20
-  },
-  {
-    name: "Fried rice with sea food",
-    price: 25
-  },
-  {
-    name: "Fried rice with fried chicken",
-    price: 25
-  },
-  {
-    name: "Fried rice with boiled chicken",
-    price: 25
-  },
-  {
-    name: "Noodles with sea food",
-    price: 30
-  },
-  {
-    name: "Noodles with beef",
-    price: 30
-  },
-  {
-    name: "Hu tieu with sea food",
-    price: 30
-  },
-  {
-    name: "Extra rice",
-    price: 0
-  },
-  {
-    name: "Chilli",
-    price: 0
+    name: "Masala Fish with Naan",
+    price: 42
   }
-];
+]
 var order_list = []; // Create empty oder_list arr
 
 function updateOrderList() {
@@ -73,14 +31,14 @@ function updateOrderList() {
 
     order_list.forEach((item, index) => {
       const menuItem = menu[item.id];
-      const itemPrice = menuItem.price * item.quantity;
+      const itemPrice = 42 * item.quantity; // Set the price to 42 zl
       totalOrderPrice += itemPrice; // Update the total order price
 
       str += '<tr>';
       str += '<td>' + (index + 1) + '</td>';
       str += '<td>' + menuItem.name + '</td>';
       str += '<td>' + item.quantity + '</td>';
-      str += '<td>' + itemPrice + 'k</td>';
+      str += '<td>' + itemPrice + ' zl</td>'; // Display price as 42 zl
       str += '<td><a class="del-btn" href="javascript:void(0)" onclick="deleteItem(' + index + ')"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>';
       str += '</tr>';
     });
@@ -100,12 +58,13 @@ function updateOrderList() {
   // Add a row for total order price
   str += '<tr>';
   str += '<td colspan="3" style="text-align: right">Total:</td>';
-  str += '<td>' + totalOrderPrice + 'k</td>';
+  str += '<td>' + totalOrderPrice + ' zl</td>'; // Display total price as 42 zl
   str += '<td></td>';
   str += '</tr>';
 
   order_tbl.innerHTML = str;
 }
+
 
 
 function addItem(id) {
@@ -136,19 +95,33 @@ function exportPDF() {
 }
 
 
+// ... (previous code)
+
+// ... (previous code)
+
+// Initialize
+// ... (previous code)
+
 // Initialize
 function initApp() {
   for (let i = 0; i < menu.length; i++) {
     let str = '<div class="menu-item">';
+    str += '<div class="menu-image">';
+    str += '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScywzPWcx8vSQd5D7Nq91GSlmDzBxmQdX74A&usqp=CAU" class="food-image" alt="' + menu[i].name + '">';
+    str += '</div>';
+    str += '<div class="menu-text">';
     str += '<p class="food-name">' + menu[i].name + '</p>';
-    str += '<p class="price">' + (menu[i].price == 0 ? 'Free' : menu[i].price + 'k') + '</p>';
+    str += '<p class="price">' + (menu[i].price == 0 ? 'Free' : menu[i].price + ' zl') + '</p>';
     str += '<input class="qty" type="number" name="qty" value="1" min="1" max="100" >';
     str += '<button class="add-btn" type="button" value="' + i + '" onclick="addItem(' + i +')">ADD</button>';
+    str += '</div>';
     str += '</div>';
     menu_container.insertAdjacentHTML('beforeend', str);
   }
   updateOrderList();
 }
+
+
 
 initApp();
 
@@ -198,6 +171,8 @@ document.getElementById('export').addEventListener('click', function(event) {
   // Submit the form
   document.querySelector("form").submit();
 });}
+s
+
 
 
 // ... (rest of the code)
