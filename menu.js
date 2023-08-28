@@ -19,3 +19,7 @@ const quantityInputs = document.querySelectorAll('input[type="number"]');
       updateTotalPrice();
     });
   });
+
+  document.querySelector('.menu-icon').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+});

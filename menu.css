@@ -8,6 +8,7 @@
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
+    overflow-x:hidden; /* Allow horizontal scrolling */
 }
 
 /* Menu section styles */
@@ -290,4 +291,70 @@ max-width: 600px; /* Set a maximum width for the hamburger section */
 margin: 0 auto; /* Center-align the section horizontally */
 padding: 20px 0; /* Add some padding for better spacing */
 text-align: center;
+}
+
+/* ... (previous CSS rules) ... */
+
+/* Mobile menu icon */
+.menu-icon {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    top: 10px;
+}
+
+/* Mobile navigation */
+.mobile-menu {
+    display: none;
+}
+
+/* Adjustments for mobile views */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #ff8420;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        transition: left 0.3s ease-in-out;
+        z-index: 1;
+    }
+
+    .navbar.active .nav-links {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
 }
